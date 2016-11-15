@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Edit A Product</title>
+    </head>
+    <body>
+        <h2>Edit Product</h2>
+        <form action="{% url 'update' product %}" method="post">
+            {% csrf_token %}
+            <h3>Name</h3>
+            <input type="text" name="name">
+            <h3>Description</h3>
+            <input type="text" name="description">
+            <h3>Price</h3>
+            <input type="number" name="price">
+            <input type="submit" name="submit" value="Edit">
+        </form>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <input type="submit" name="submit" value="Go Back">
+        </form>
+    </body>
+</html>
